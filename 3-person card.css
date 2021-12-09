@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap");
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    align-items: center;
+    background-color: #003;
+}
+
+body {
+    display: flex;
+}
+
+.content1 {
+    width: 1200px;
+    display: flex;
+    margin: auto;
+}
+
+.block {
+    width: 370px;
+    margin: 15px;
+    text-align: left;
+    background-color: #FFF;
+    transform: translateY(0px);
+    transition: .5s;
+}
+
+.block img {
+    width: 300px;
+    height: 300px;
+    width: 100%;
+    vertical-align: middle;
+    /*沒加這行會多一個三角形*/
+}
+
+.block h2 {
+    text-align: center;
+    border-bottom: 1px solid #888;
+    /*底線上下各隔0.3*/
+    padding-bottom: .3em;
+    margin-bottom: .3em;
+    font-weight: 650;
+}
+
+.block h3 {
+    text-align: center;
+    margin-bottom: .3em;
+}
+
+.block p {
+    line-height: 1.2;
+    /*文字行高*/
+    font-weight: 320;
+}
+
+.block .text {
+    padding: 20px;
+    position: relative;
+}
+
+.block .text:before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 0;
+    top: 0;
+    border-top: 50px solid transparent;
+    border-left: 185px solid #fff;
+    border-right: 185px solid #fff;
+    transform: translateY(-100%);
+}
+
+.block:hover {
+    transform: translateY(-30px);
+    /*往上移動的特效*/
+}
+
+.block:hover .text {
+    background-image: linear-gradient(10deg, #f6d365 0%, #fda085 100%);
+}
+
+.block:hover .text:before {
+    border-left: 185px solid #fda085;
+    border-right: 185px solid #fda085;
+}
+
+.block:hover h2 {
+    color: #634d4c;
+}
+
+.block:hover h3 {
+    color: #634d4c;
+}
+
+.block:hover p {
+    color: #8a706e;
+}

@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC:300,700,900&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+.content1 {
+    width: 100%;
+    height: 100vh;
+    background-color: #ccc;
+    background: linear-gradient(115deg, #7bf 50%, transparent 70%) center center / 100% 100%, url("https://picsum.photos/1200/600?random=10") left center / auto 100%;
+    /*transparent 連接處的透明度*/
+}
+
+.container {
+    width: 100%;
+    max-width: 1440px;
+    height: 100%;
+    margin: auto;
+}
+
+.banner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.banner h1 {
+    font-size: 60px;
+}
+
+hr {
+    width: 20%;
+}
