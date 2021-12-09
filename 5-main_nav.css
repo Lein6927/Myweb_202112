@@ -7,6 +7,23 @@
     font-family: 'Noto Sans TC', sans-serif;
 }
 
-.container img {
-    width: 100px;
+.main-header .container {
+    display: flex;
+    align-items: center;
+    padding: auto;
+    max-width: 1200px;
+}
+
+.main-header .logo {
+    width: 80px;
+}
+
+.main-header .logo img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+.main-header .main-nav a {
+    font-family: 'Noto Sans TC', sans-serif;
+    text-decoration: none;
 }
