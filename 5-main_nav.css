@@ -8,12 +8,14 @@
 }
 
 .main-header {
+    margin: -10px;
     background-color: #555;
 }
 
 .main-header .container {
     display: flex;
     align-items: center;
+    /*垂直置中*/
     padding: 20px;
     max-width: 1200px;
     margin: auto;
@@ -35,9 +37,57 @@
 
 .main-header .main-nav a {
     font-family: 'Noto Sans TC', sans-serif;
+    font-size: 20px;
     text-decoration: none;
     color: #fff;
-    padding: 5px 1em;
+    padding: 10px 1em;
     position: relative;
     transform: translateY(0px);
 }
+
+.main-header .main-nav a:hover {
+    transform: translateY(-10px);
+}
+
+.main-header .main-nav a:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    bottom: -2px;
+    height: 0;
+    border-bottom: 1px solid #fff;
+    transition: .5s;
+}
+
+.main-header .main-nav a:hover:after {
+    left: 1em;
+    right: 1em;
+}
+
+.main-header .header-search {
+    display: flex;
+    /*緊密排列*/
+}
+
+.main-header .header-search button,
+.main-header .header-search input {
+    border: none;
+    background-color: #FFF;
+    padding: 5px 10px
+}
+
+.main-header .header-search button {
+    border-radius: 0 200px 200px 0;
+}
+
+.main-header .header-search input {
+    border-radius: 200px 0 0 200px;
+}
+
+
+/*
+.main-header .header-search button:focus,
+.main-header .header-search input:focus {
+    outline: none;
+}*/
