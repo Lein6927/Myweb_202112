@@ -58,8 +58,9 @@
 /*作品區*/
 
 .portfolio {
+    margin: 10px;
     align-items: center;
-    background-color: #aaa;
+    /*background-color: #aaa;*/
 }
 
 .portfolio h2 {
@@ -83,6 +84,7 @@
     float: left;
     width: 100%;
     position: relative;
+    background-color: #ccc;
 }
 
 .mission h2 {
