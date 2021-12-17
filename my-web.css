@@ -5,6 +5,7 @@
     padding: 20;
     list-style: none;
     font-family: 'Noto Sans TC', sans-serif;
+    border: solid 1px black;
 }
 
 
@@ -101,11 +102,11 @@
 /*委託區*/
 
 .mission {
-    float: left;
     width: 100%;
     position: relative;
     background-color: #ccc;
     border: solid 1px black;
+    display: inline-block;
 }
 
 .mission h2 {
@@ -113,7 +114,7 @@
     /* align-items: center;*/
 }
 
-.container .mission .mis-imgs {
+.mission .mis-imgs {
     align-items: center;
     display: inline-block;
     margin-left: 10px;
