@@ -22,14 +22,146 @@ html {
     height: 400px;
 }
 
-.top .cloud {
-    size: +60px;
+.temsvg {
+    width: 100%;
 }
 
+
+/*偏移整體文字座標可用*/
+
+
+/*
+text {
+    transform: translateX(-10px);
+}*/
+
+
+/*月亮呈現特效*/
+
+.moon {
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    position: absolute;
+    top: 160px;
+    left: 30px;
+    box-shadow: 15px -10px;
+    animation: moonmove 5s infinite;
+    /*infinite 持續重複動畫*/
+}
+
+@-webkit-keyframes moonmove {
+    0% {
+        transform: translateX(-15px) translateY(15px);
+        box-shadow: 15px -15px 0 0 #FFD633;
+    }
+    100% {
+        transform: translateX(30px) translateY(-30px);
+        box-shadow: -30px 30px 0 0 #FFD633;
+    }
+}
+
+@keyframes moonmove {
+    0% {
+        transform: translateX(-15px) translateY(15px);
+        box-shadow: 15px -15px 0 0 #FFD633;
+    }
+    100% {
+        transform: translateX(30px) translateY(-30px);
+        box-shadow: -30px 30px 0 0 #FFD633;
+    }
+}
+
+.rain {
+    width: 2px;
+    height: 10px;
+    position: absolute;
+    left: 45px;
+    bottom: 15px;
+    background-color: #f3f3f3;
+    animation: raindo 1s infinite linear;
+    /*linear 呈線性的跑*/
+}
+
+.rain2 {
+    left: 70px;
+    bottom: 20px;
+    animation-delay: -0.4s;
+}
+
+.rain3 {
+    left: 25px;
+    bottom: 10px;
+    animation-delay: -0.7;
+}
+
+@keyframes raindo {
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(70px);
+        opacity: 0;
+        /*會消失*/
+    }
+}
+
+
+/*簡單雲朵SVG*/
+
+.cloud {
+    width: 100px;
+    height: 50px;
+    size: +60px;
+    background-color: #f2f9fe;
+    border-radius: 30px;
+    position: absolute;
+    left: 200px;
+    bottom: 50px;
+    animation: clouddo 5s infinite linear;
+}
+
+.cloud::before,
+.cloud::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 50px;
+    top: -30px;
+    left: 10px;
+    background-color: #f2f9fe;
+    position: absolute;
+    border-radius: 100px;
+    border: solid 1px black;
+}
+
+.cloud::after {
+    top: -20px;
+    left: 38px;
+    border-radius: 100px;
+}
+
+@keyframes clouddo {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+
+/*
 svg {
     width: 50px;
     height: 50px;
-}
+}*/
+
+
+/*顯示溫度地區的方框*/
 
 .textarea {
     display: inline-block;
@@ -47,6 +179,9 @@ svg {
 .infos {
     font-size: 16px;
 }
+
+
+/*顯示底部Mon - Sun 的每日天氣*/
 
 .bottom {
     height: 100px;
