@@ -1,5 +1,5 @@
 * {
-    border: solid 1px black;
+    /*border: solid 1px black;*/
     position: relative;
     font-family: sans-serif, "微軟正黑體";
 }
@@ -10,20 +10,84 @@ html {
     height: 100%;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #555;
 }
 
 .daybox {
     width: 50%;
     max-width: 400px;
     height: 500px;
+    background-color: #FFF;
+    border-radius: 5px;
+    overflow: hidden;
+    transition-duration: 2s;
+    cursor: pointer;
 }
+
+
+/*
+.daybox .bottom:hover {
+    height: 100px;
+}
+
+.daybox:hover .dayweather {
+    opacity: 1;
+}
+*/
 
 .top {
     height: 400px;
+    background: linear-gradient(20deg, #19283D 0%, #1D678F 95%);
+    background-size: 100% 300%;
+    border-radius: 5px 5px 0px 0px;
+}
+
+@keyframes daylight {
+    0% {
+        background-position: 100% 30%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
 }
 
 .temsvg {
     width: 100%;
+}
+
+
+/*
+.temsvg polyline {
+    fill: none;
+    stroke: white;
+    color: #FFF;
+    stroke-width: 2px;
+    /*線粗細*/
+
+
+/*
+    opacity: 0.05;
+    transition: 0.5s 0.2s;
+}
+*/
+
+
+/*
+.temsvg text {
+    fill: none;
+    stroke: #FFF;
+    opacity: 0;
+    transition: 0.5s 0.5s;
+    transform: translateX(-8px) translateY(25px);
+    font-size: 10px;
+}
+*/
+
+.temsvg circle {
+    fill: #FFF;
 }
 
 
@@ -119,6 +183,7 @@ text {
     left: 200px;
     bottom: 50px;
     animation: clouddo 5s infinite linear;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
 }
 
 .cloud::before,
@@ -127,12 +192,12 @@ text {
     display: block;
     width: 50px;
     height: 50px;
-    top: -30px;
+    top: -25px;
     left: 10px;
     background-color: #f2f9fe;
     position: absolute;
     border-radius: 100px;
-    border: solid 1px black;
+    /* border: solid 1px black;*/
 }
 
 .cloud::after {
@@ -168,6 +233,7 @@ svg {
     position: absolute;
     bottom: 50px;
     left: 20px;
+    color: honeydew;
     /*針對上層的relative做定位*/
 }
 
@@ -178,6 +244,12 @@ svg {
 
 .infos {
     font-size: 16px;
+    opacity: 0.8;
+    /*透明度*/
+}
+
+#switch {
+    display: none;
 }
 
 
@@ -189,6 +261,9 @@ svg {
     /*並排不會有空隙*/
     justify-content: center;
     /*依照flex從中間開始做排序 左右置中*/
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transition-duration: 2s;
 }
 
 .dayweather {
@@ -205,4 +280,21 @@ svg {
     width: 100%;
     max-width: 30px;
     height: 40px;
+}
+
+.dayweather svg .sun {
+    fill: #FFD633;
+    stroke-width: 30px;
+    stroke-dasharray: 5px;
+    stroke: rgba(255, 214, 51, 0.5);
+    ;
+}
+
+.dayweather svg .rain {
+    stroke: #4DACFF;
+    stroke-width: 5px;
+}
+
+.dayweather svg .cloud {
+    fill: #ccc;
 }
